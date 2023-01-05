@@ -1,11 +1,16 @@
-import React from 'react'
+import React from "react";
 
 export default class Todo extends React.Component {
+  constructor(props) {
+    super(props);
+    this.name = this.props.task.name;
+    this.completed = false;
+  }
   render() {
     return (
-      <div>
-        Todo
+      <div onClick={(e) => this.props.completeTodo(e, this.props.task.id)}>
+        <p>{this.name}</p>
       </div>
-    )
+    );
   }
 }
