@@ -9,7 +9,10 @@ export default class Todo extends React.Component {
   render() {
     return (
       <div onClick={(e) => this.props.completeTodo(e, this.props.task.id)}>
-        <p>{this.name}</p>
+        <p>
+          {this.name}
+          {this.props.task.completed ? "✔" : ""}
+        </p>
       </div>
     );
   }

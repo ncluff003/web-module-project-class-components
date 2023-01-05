@@ -12,11 +12,13 @@ export default class Form extends React.Component {
 
   render() {
     return (
-      <form onSubmit={(e) => this.props.addTodo(e)}>
-        <input type="text" name="name" onChange={(e) => this.props.handleChange(e)} />
-        <button type="submit">Add Task</button>
+      <>
+        <form onSubmit={(e) => this.props.addTodo(e)}>
+          <input type="text" name="name" onChange={(e) => this.props.handleChange(e)} />
+          <button type="submit">Add Task</button>
+        </form>
         <button onClick={(e) => this.props.clearCompleted(e)}>Clear Completed</button>
-      </form>
+      </>
     );
   }
 }
